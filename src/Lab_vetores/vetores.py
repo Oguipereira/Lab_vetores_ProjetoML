@@ -32,7 +32,10 @@ class Vector:
 
         return self.components / modulo # formula base 
 
-v = Vector([3, 4])
+    def somar(self, outro):
+        if self.components.size != outro.components.size:
+            raise ValueError(
+                "Os vetores precisam ter oos mesmo componentes"
+            )
+        return Vector(self.components + outro.components)
 
-print("Norma:", v.norma())
-print("Versor:", v.versor())
